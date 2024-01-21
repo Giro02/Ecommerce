@@ -29,7 +29,6 @@ export default function Header() {
           <Menu text="Dormir Bem"></Menu>
           <Menu text="Saúde Sexual"></Menu>
           <Menu text="Desempenho Físico"></Menu>
-          <Menu text="Foo"></Menu>
         </div>
       </div>
     </div>
