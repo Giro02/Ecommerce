@@ -73,7 +73,7 @@ export function Procure() {
         className="h-[40px] border border-color-borda w-full px-4 rounded-l-md"
         placeholder="Pesquisar na loja toda..."
       ></input>
-      <button className="w-[48px] h-[40px] bg-color-verde rounded-r-md"></button>
+      <button className="w-[48px] h-[40px] bg-color-verde rounded-r-md items-center flex justify-center"></button>
     </div>
   );
 }
