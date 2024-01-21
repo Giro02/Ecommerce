@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",
+    "embla-carousel-autoplay": "^8.0.0-rc19",
     "embla-carousel-react": "^8.0.0-rc19",
     "gatsby": "^5.13.1",
     "gatsby-plugin-postcss": "^6.13.0",

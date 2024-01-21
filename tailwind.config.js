@@ -5,7 +5,11 @@ module.exports = {
     `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
   theme: {
-    extend: {},
+    extend: {
+      aspectRatio: {
+        '4.47/1': '4.47/1',
+      },
+    },
     colors:{
       color:{
         verde:"#417B25",
