@@ -35,8 +35,8 @@ export default function Carosel() {
     <div className="flex justify-center w-full h-full flex-col items-center relative">
       <div className="embla w-full" ref={emblaRef}>
         <div className="embla__container">
-          {imagens.map((i) => (
-            <div className="embla__slide">
+          {imagens.map((i, index) => (
+            <div key={index} className="embla__slide">
               <Images Image={i}></Images>
             </div>
           ))}

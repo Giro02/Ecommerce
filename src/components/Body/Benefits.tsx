@@ -7,8 +7,8 @@ export default function Benefits() {
   return (
     // Add Font
     <div className="w-full flex justify-center">
-      <div className="w-full max-w-[1120px] px-8 flex justify-between">
-        <div className="cursor-pointer">
+      <div className="w-full max-w-[1120px] px-8 flex justify-between gap-4">
+        <div className="cursor-pointer w-full max-w-[310px]">
           <CreateBenefits
             Title="Politica de Entrega"
             Description="* Consulte condições"
@@ -40,11 +40,11 @@ type ItemProps = {
 function CreateBenefits({ Title, Description, Icon }: ItemProps) {
   return (
     // Add Font
-    <div>
-      <div className="w-[310px] h-[70px] border border-color-borda px-4 rounded-xl flex items-center text-color-preto gap-4 mt-8">
+    <div className="hidden sm:flex w-full max-w-[310px]">
+      <div className="w-full py-4 h-[150px] text-center md:text-left md:h-[70px] border border-color-borda px-4 rounded-xl flex flex-col md:flex-row items-center text-color-preto gap-4 mt-8">
         <div className="text-color-verde"> {Icon}</div>
-        <div>
-          <div className="font-bold text-[13px]">{Title}</div>
+        <div className="w-full">
+          <div className="font-bold text-[13px] ">{Title}</div>
           <div className=" text-[11px]">{Description}</div>
         </div>
       </div>

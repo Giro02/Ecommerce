@@ -27,7 +27,7 @@ export default function Header() {
       </div>
 
       {/* GREEN MENU, HIDDES IN MOBILE*/}
-      <div className="h-11 bg-color-verde w-full mt-[-18px] items-center justify-center hidden md:flex">
+      <div className="h-12 bg-color-verde w-full mt-[-10px] items-center justify-center hidden md:flex">
         <div className=" flex items-center w-full max-w-[1120px] justify-between text-white px-8 ">
           <Hamburguer></Hamburguer>
           <Menu text="Queda Capilar"></Menu>

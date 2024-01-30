@@ -1,0 +1,54 @@
+{
+    "ProdsForYou": [
+      {
+        "name": "Happy Hair 30 Cápsulas",
+        "url": "HappyHair.png",
+        "desc": "Estimula o crescimento e fortalece os fios capilares",
+        "price": "99,99",
+        "page": "HappyHair"
+      },
+      {
+        "name": "Chá Verde 30 Cápsulas",
+        "url": "ChaVerde.png",
+        "desc": "Estimula o crescimento e fortalece os fios capilares",
+        "price": "109,99",
+        "page": "ChaVerde"
+      },
+      {
+        "name": "Happy Hair 30 Cápsulas",
+        "url": "HappyHair.png",
+        "desc": "Estimula o crescimento e fortalece os fios capilares",
+        "price": "49,99",
+        "page": "HappyHair"
+      },
+      {
+        "name": "Happy Hair 30 Cápsulas",
+        "url": "HappyHair.png",
+        "desc": "Estimula o crescimento e fortalece os fios capilares",
+        "price": "49,99",
+        "page": "HappyHair"
+      },
+      {
+        "name": "Happy Hair 30 Cápsulas",
+        "url": "HappyHair.png",
+        "desc": "Estimula o crescimento e fortalece os fios capilares",
+        "price": "49,99",
+        "page": "HappyHair"
+      },
+      {
+        "name": "Happy Hair 30 Cápsulas",
+        "url": "HappyHair.png",
+        "desc": "Estimula o crescimento e fortalece os fios capilares",
+        "price": "49,99",
+        "page": "HappyHair"
+      },
+      {
+        "name": "Happy Hair 30 Cápsulas",
+        "url": "HappyHair.png",
+        "desc": "Estimula o crescimento e fortalece os fios capilares",
+        "price": "49,99",
+        "page": "HappyHair"
+      }
+      
+    ]
+  }
