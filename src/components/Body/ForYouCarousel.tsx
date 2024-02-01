@@ -7,8 +7,8 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const App = () => {
   return (
-    <div className="flex justify-center w-full">
-      <div>
+    <div className="flex justify-center w-full overflow-hidden">
+      <div className="">
         <Constructor></Constructor>
       </div>
     </div>
@@ -21,15 +21,14 @@ function Constructor() {
   const [selected, setSelected] = useState(0);
   const Products = ProdData.ProdsForYou;
   const [Saiba, setSaiba] = useState(null);
-
   const SlideElements = Products.map((product, index) => (
     <div key={index}>
       <div
-        className={`rounded-xl px-4 cursor-pointer transition-all hover:shadow-2xl w-[240px] h-[500px] flex items-center justify-center flex-col mt-4 text-center`}
+        className={`rounded-xl px-4 cursor-pointer transition-all hover:shadow-2xl w-[200px] h-[400px] md:w-[240px] md:h-[500px] flex items-center justify-center flex-col mt-4 text-center`}
         onMouseEnter={() => setSaiba(index)}
         onMouseLeave={() => setSaiba(null)}
       >
-        <div className=" h-[225px]">
+        <div className=" h-[140px] md:h-[180px]">
           <img
             src={require(`../../images/Prods/${product.url}`).default}
             className="w-full h-full fill"
@@ -50,7 +49,7 @@ function Constructor() {
         <div
           className={`h-10 bg-color-verde w-full ${
             Saiba === index ? "flex" : "invisible "
-          } items-center justify-center text-color-branco text-[16px] rounded-lg mt-4`}
+          } items-center justify-center text-color-branco text-[16px] rounded-lg mt-2 md:mt-8`}
         >
           Saiba Mais
         </div>
@@ -70,7 +69,6 @@ function Constructor() {
   useEffect(() => {
     if (emblaApi) emblaApi.on("select", onSelect);
   }, [emblaApi, onSelect]);
-  console.log(selected);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -81,9 +79,9 @@ function Constructor() {
   }, [emblaApi]);
   return (
     <div className="relative">
-      <div className="flex max-w-[1120px] px-8 w-full overflow-hidden">
-        <div className="embla w-full" ref={emblaRef}>
-          <div className="embla__container flex items  gap-3 py-8 px-8">
+      <div className="flex lg:max-w-[1120px] md:max-w-[750px] sm:max-w-[600px] max-w-[350px] px-8 w-full overflow-hidden">
+        <div className="embla" ref={emblaRef}>
+          <div className="embla__container flex justify-start w-full gap-1 py-8 px-8">
             {SlideElements}
           </div>
         </div>
@@ -91,14 +89,20 @@ function Constructor() {
       <div
         onClick={scrollPrev}
         className={`${
-          selected === 0 ? "hidden" : "flex"
-        } rounded-full w-11 h-11 text-color-preto absolute left-[-15px] top-1/2 rotate-180  -translate-y-1/2  items-center justify-center text-color-branco/90 p-1 cursor-pointer`}
+          selected === 0
+            ? "text-color-preto/20 cursor-default"
+            : "text-color-preto cursor-pointer"
+        } rounded-full w-11 h-11 flex absolute left-[-15px] top-1/2 rotate-180  -translate-y-1/2  items-center justify-center text-color-branco/90 `}
       >
         <IoIosArrowForward size={25}></IoIosArrowForward>
       </div>
       <div
         onClick={scrollNext}
-        className=" rounded-full w-11 h-11 text-color-preto absolute right-[-15px] top-1/2 -translate-y-1/2 flex items-center justify-center text-color-branco/90  cursor-pointer"
+        className={`${
+          selected === 4
+            ? "text-color-preto/20 cursor-default"
+            : "text-color-preto cursor-pointer"
+        } rounded-full w-11 h-11  absolute right-[-15px] top-1/2 -translate-y-1/2 flex items-center justify-center text-color-branco/90 `}
       >
         <IoIosArrowForward size={25}></IoIosArrowForward>
       </div>

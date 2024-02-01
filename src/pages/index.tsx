@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Carosel from "../components/Carosel";
 import Benefits from "../components/Body/Benefits";
 import Foryou from "../components/Body/Foryou";
-import Products from "../components/Body/Products";
+import ForYouCarousel from "../components/Body/ForYouCarousel";
 
 const IndexPage = () => {
   return (
@@ -12,7 +12,7 @@ const IndexPage = () => {
       <Carosel></Carosel>
       <Benefits></Benefits>
       <Foryou></Foryou>
-      <Products></Products>
+      <ForYouCarousel></ForYouCarousel>
     </main>
   );
 };

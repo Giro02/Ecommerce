@@ -47,7 +47,7 @@ type ItemProps = {
 
 export function Menu({ text }: ItemProps) {
   return (
-    <div className="cursor-pointer h-full p-2 hover:bg-color-hover text-color-branco">
+    <div className="cursor-pointer h-12 flex items-center px-4 hover:bg-color-hover text-color-branco">
       {text}
     </div>
   );

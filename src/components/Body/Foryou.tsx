@@ -10,9 +10,3 @@ export default function () {
     </div>
   );
 }
-
-
-function ForYouCarousel(){
-
-  
-}
