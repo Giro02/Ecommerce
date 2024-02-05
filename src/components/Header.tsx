@@ -1,4 +1,4 @@
-import React, { SetStateAction, useState, Dispatch } from "react";
+import React, { SetStateAction, useState, Dispatch, useEffect } from "react";
 import Logo from "../images/LogoQi.png";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import "../styles/animations.css";
@@ -6,13 +6,54 @@ import { IoIosArrowForward } from "react-icons/io";
 
 export default function Header() {
   const [Down, setDown] = useState(false);
+  const [MobileMenu, setMobileMenu] = useState(false);
+
+  function MobileIsOpen() {
+    setMobileMenu((prevMobileMenu) => !prevMobileMenu);
+  }
+
   return (
     // Add Font
     <div className="">
+      <div
+        className={` ${
+          MobileMenu ? "fadeIn" : ""
+        } fixed z-30 bg-color-preto/60 w-full h-full invisible md:hidden`}
+      ></div>
+      <div
+        className={`${
+          MobileMenu ? "DropInMobile" : "DropOutMobile"
+        } md:hidden z-40 left-0 h-full w-[80%] bg-color-branco fixed overflow-hidden`}
+      >
+        <div className="p-4 border-b border-color-borda w-full h-16">
+          <div className="flex font-medium w-full justify-between text-2xl">
+            <p>Explorar</p>
+            <p
+              className="cursor-pointer"
+              onClick={() => {
+                MobileIsOpen();
+              }}
+            >
+              x
+            </p>
+          </div>
+        </div>
+        <div className="p-4 gap-8 flex flex-col font-medium mt-4">
+          <DropDownOptions text="Beleza"></DropDownOptions>
+          <DropDownOptions text="Saúde Feminina"></DropDownOptions>
+          <DropDownOptions text="Emagrecimendo"></DropDownOptions>
+          <DropDownOptions text="Queda Capilar"></DropDownOptions>
+          <DropDownOptions text="Saúde Sexual"></DropDownOptions>
+          <DropDownOptions text="Desempenho Físico"></DropDownOptions>
+          <DropDownOptions text="Dormir Bem"></DropDownOptions>
+        </div>
+      </div>
       <div className="flex justify-center ">
         <div className="max-w-[1120px] w-full h-[100px] flex justify-between items-center px-8 overflow-hidden ">
           <div className="md:hidden mr-4">
-            <HamburguerPhone></HamburguerPhone>
+            <div onClick={() => MobileIsOpen()}>
+              <HamburguerPhone></HamburguerPhone>
+            </div>
           </div>
 
           <img src={Logo}></img>
@@ -95,11 +136,11 @@ export function Hamburguer({ Down, setDown }: MenuProps) {
       <p className="translate-y-[-2px]">Todas as Categorias</p>
 
       <div
-        className={` ${Down ? "visible" : " invisible"}
+        className={` ${Down ? "DropDown" : " invisible"}
         }  left-0 top-[42px] bg-color-branco rounded-b-xl absolute w-full z-30 overflow-hidden shadow-xl cursor-default`}
       >
         <div
-          className={` flex flex-col text-center gap-10 text-color-preto font-medium mt-4 mb-2 p-4 text-[15px]`}
+          className={` flex flex-col text-center gap-10 text-color-preto mt-4 mb-2 p-4 text-[15px]`}
         >
           <DropDownOptions text="Beleza"></DropDownOptions>
           <DropDownOptions text="Saúde Feminina"></DropDownOptions>
