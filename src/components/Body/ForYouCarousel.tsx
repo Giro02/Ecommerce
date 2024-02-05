@@ -24,32 +24,34 @@ function Constructor() {
   const SlideElements = Products.map((product, index) => (
     <div key={index}>
       <div
-        className={`rounded-xl px-4 cursor-pointer transition-all hover:shadow-2xl w-[200px] h-[400px] md:w-[240px] md:h-[500px] flex items-center justify-center flex-col mt-4 text-center`}
+        className={`rounded-xl relative p-4 cursor-pointer transition-all hover:shadow-2xl w-[200px] h-[400px] md:w-[240px] md:h-[450px] flex items-center justify-center flex-col text-center`}
         onMouseEnter={() => setSaiba(index)}
         onMouseLeave={() => setSaiba(null)}
       >
-        <div className=" h-[140px] md:h-[180px]">
+        <div className=" h-[140px] md:h-[160px]">
           <img
             src={require(`../../images/Prods/${product.url}`).default}
-            className="w-full h-full fill"
+            className="w-full h-full"
             alt={product.name}
           />
         </div>
         <div>
-          <p className="text-[16px] text-color-preto mt-4">{product.name}</p>
+          <p className="text-[16px] md:h-8 h-12 text-color-preto mt-4">
+            {product.name}
+          </p>
         </div>
-        <div className="mt-4">
-          <p className="text-[13px] text-color-preto/70">{product.desc}</p>
+        <div>
+          <p className="text-[13px] h-14 text-color-preto/70">{product.desc}</p>
         </div>
-        <div className="mt-6">
-          <p className="text-[16px] text-color-preto font-bold">
+        <div>
+          <p className="text-[16px] h-10  text-color-preto font-bold">
             R$ {product.price}
           </p>
         </div>
         <div
           className={`h-10 bg-color-verde w-full ${
-            Saiba === index ? "flex" : "invisible "
-          } items-center justify-center text-color-branco text-[16px] rounded-lg mt-2 md:mt-8`}
+            Saiba === index ? "flex" : " flex sm:invisible "
+          } items-center justify-center text-color-branco text-[16px]  rounded-lg mt-4 md:mt-8`}
         >
           Saiba Mais
         </div>

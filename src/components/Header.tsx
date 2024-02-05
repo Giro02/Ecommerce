@@ -1,22 +1,25 @@
-import React from "react";
-import Logo from "../images/Logo.png";
+import React, { SetStateAction, useState, Dispatch } from "react";
+import Logo from "../images/LogoQi.png";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import "../styles/animations.css";
+import { IoIosArrowForward } from "react-icons/io";
 
 export default function Header() {
+  const [Down, setDown] = useState(false);
   return (
     // Add Font
-    <div>
-      <div className="flex justify-center">
-        <div className="max-w-[1120px] w-full flex justify-between items-center px-8 overflow-hidden">
-          <div className="md:hidden">
+    <div className="">
+      <div className="flex justify-center ">
+        <div className="max-w-[1120px] w-full h-[100px] flex justify-between items-center px-8 overflow-hidden ">
+          <div className="md:hidden mr-4">
             <HamburguerPhone></HamburguerPhone>
           </div>
 
           <img src={Logo}></img>
-          <div className=" max-w-[520px] w-full hidden md:flex">
+          <div className=" max-w-[520px] w-full hidden md:flex ">
             <Procure></Procure>
           </div>
-          <div className="ml-4">
+          <div className="md:ml-4">
             <MdOutlineShoppingCart size={38}></MdOutlineShoppingCart>
           </div>
         </div>
@@ -27,9 +30,9 @@ export default function Header() {
       </div>
 
       {/* GREEN MENU, HIDDES IN MOBILE*/}
-      <div className="h-12 bg-color-verde w-full mt-[-10px] items-center justify-center hidden md:flex">
-        <div className=" flex items-center w-full max-w-[1120px] justify-between text-white px-8 ">
-          <Hamburguer></Hamburguer>
+      <div className="h-12 bg-color-verde w-full mt-[-10px] items-end justify-center relative hidden md:flex">
+        <div className=" flex items-center  w-full max-w-[1120px] justify-between text-white px-8 ">
+          <Hamburguer setDown={setDown} Down={Down}></Hamburguer>
           <Menu text="Queda Capilar"></Menu>
           <Menu text="Emagrecimento"></Menu>
           <Menu text="Dormir Bem"></Menu>
@@ -53,12 +56,72 @@ export function Menu({ text }: ItemProps) {
   );
 }
 
-export function Hamburguer() {
+type MenuProps = {
+  setDown: Dispatch<SetStateAction<boolean>>;
+  Down: boolean;
+};
+export function Hamburguer({ Down, setDown }: MenuProps) {
+  function Isdropped() {
+    setDown(!Down);
+  }
+
   return (
-    <div className="flex flex-col gap-1 cursor-pointer">
-      <div className="border border-color-branco w-7 rounded-md"></div>
-      <div className="border border-color-branco w-7 rounded-md"></div>
-      <div className="border border-color-branco w-7 rounded-md"></div>
+    <div
+      onMouseEnter={() => Isdropped()}
+      onMouseLeave={() => Isdropped()}
+      className={`flex items-center gap-2  ${
+        Down
+          ? "bg-color-branco/90  z-30 text-color-verde rounded-t-xl  shadow-xl cursor-pointer"
+          : " text-color-branco"
+      }  px-4 relative translate-y-[2px] h-[42px]  bottom-0 `}
+    >
+      <div className=" flex flex-col gap-1 translate-y-[-2px]">
+        <div
+          className={`border ${
+            Down ? "border-color-verde" : "border-color-branco"
+          } w-7 rounded-md`}
+        ></div>
+        <div
+          className={`border ${
+            Down ? "border-color-verde" : "border-color-branco"
+          } w-7 rounded-md`}
+        ></div>
+        <div
+          className={`border ${
+            Down ? "border-color-verde" : "border-color-branco"
+          } w-7 rounded-md`}
+        ></div>
+      </div>
+      <p className="translate-y-[-2px]">Todas as Categorias</p>
+
+      <div
+        className={` ${Down ? "visible" : " invisible"}
+        }  left-0 top-[42px] bg-color-branco rounded-b-xl absolute w-full z-30 overflow-hidden shadow-xl cursor-default`}
+      >
+        <div
+          className={` flex flex-col text-center gap-10 text-color-preto font-medium mt-4 mb-2 p-4 text-[15px]`}
+        >
+          <DropDownOptions text="Beleza"></DropDownOptions>
+          <DropDownOptions text="Saúde Feminina"></DropDownOptions>
+          <DropDownOptions text="Emagrecimendo"></DropDownOptions>
+          <DropDownOptions text="Queda Capilar"></DropDownOptions>
+          <DropDownOptions text="Saúde Sexual"></DropDownOptions>
+          <DropDownOptions text="Desempenho Físico"></DropDownOptions>
+          <DropDownOptions text="Dormir Bem"></DropDownOptions>
+        </div>
+      </div>
+    </div>
+  );
+}
+type DropDownProps = {
+  text: string;
+};
+
+function DropDownOptions({ text }: DropDownProps) {
+  return (
+    <div className="cursor-pointer hover:text-color-verde flex items-center justify-between ">
+      {text}
+      <IoIosArrowForward></IoIosArrowForward>
     </div>
   );
 }
@@ -74,9 +137,9 @@ export function HamburguerPhone() {
 
 export function Procure() {
   return (
-    <div className="flex w-full">
+    <div className="flex w-full ">
       <input
-        className="h-[40px] border border-color-borda w-full px-4 rounded-l-md"
+        className="h-[40px] border border-color-borda w-full px-4 rounded-l-md "
         placeholder="Pesquisar na loja toda..."
       ></input>
       <button className="w-[48px] h-[40px] bg-color-verde rounded-r-md"></button>
