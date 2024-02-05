@@ -10,7 +10,8 @@ exports.createPages = async ({actions}) => {
             path: `categorias/${item.slug}`,
             component: path.resolve("./src/components/Templates/categoryTemplate.tsx"),
             context: {
-                category: item.category
+                category: item.category,
+                image: item.image,
             }
         })
     })

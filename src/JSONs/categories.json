@@ -1,20 +1,28 @@
-[{
+[
+    {
         "category": "Queda Capilar",
-        "slug": "queda-capilar"
+        "slug": "queda-capilar",
+        "image" : "Frame1.png"
     },{
         "category": "Emagrecimento",
-        "slug": "emagrecimento"
+        "slug": "emagrecimento",
+        "image" : "Frame1.png"
     },{
         "category": "Dormir Bem",
-        "slug": "dormir-bem"
+        "slug": "dormir-bem",
+        "image" : "Frame1.png"
+
     },{
         "category": "Saúde Sexual",
-        "slug": "saude-sexual"
+        "slug": "saude-sexual",
+        "image" : "Frame1.png"
     },{
         "category": "Desempenho Físico",
-        "slug": "desempenho-fisico"
+        "slug": "desempenho-fisico",
+        "image" : "Frame1.png"
     },{
         "category": "Saúde Feminina",
-        "slug": "saude-feminina"
+        "slug": "saude-feminina",
+        "image" : "Frame1.png"
     }
     ]

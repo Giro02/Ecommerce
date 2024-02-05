@@ -28,10 +28,10 @@ function Constructor() {
         onMouseEnter={() => setSaiba(index)}
         onMouseLeave={() => setSaiba(null)}
       >
-        <div className=" h-[140px] md:h-[160px]">
+        <div className="w-full h-[140px] md:h-[160px]">
           <img
             src={require(`../../images/Prods/${product.url}`).default}
-            className="w-full h-full"
+            className="w-full h-full object-contain"
             alt={product.name}
           />
         </div>

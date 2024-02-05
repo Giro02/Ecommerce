@@ -6,34 +6,31 @@ import { IoIosArrowForward } from "react-icons/io";
 
 export default function Header() {
   const [Down, setDown] = useState(false);
-  const [MobileMenu, setMobileMenu] = useState(false);
 
-  function MobileIsOpen() {
-    setMobileMenu((prevMobileMenu) => !prevMobileMenu);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  function toggleMenu() {
+    setIsMenuOpen((prevMobileMenu) => !prevMobileMenu);
   }
 
   return (
     // Add Font
     <div className="">
       <div
+        onClick={toggleMenu}
         className={` ${
-          MobileMenu ? "fadeIn" : ""
-        } fixed z-30 bg-color-preto/60 w-full h-full invisible md:hidden`}
+          isMenuOpen ? " opacity-100 " : "opacity-0 invisible"
+        } fixed z-30 bg-color-preto/60 w-full h-full  md:hidden transition-all duration-300`}
       ></div>
       <div
         className={`${
-          MobileMenu ? "DropInMobile" : "DropOutMobile"
-        } md:hidden z-40 left-0 h-full w-[80%] bg-color-branco fixed overflow-hidden`}
+          isMenuOpen ? " w-[80%]" : " w-0"
+        } md:hidden z-40 left-0 h-full bg-color-branco fixed overflow-hidden transition-[width] duration-300`}
       >
         <div className="p-4 border-b border-color-borda w-full h-16">
           <div className="flex font-medium w-full justify-between text-2xl">
             <p>Explorar</p>
-            <p
-              className="cursor-pointer"
-              onClick={() => {
-                MobileIsOpen();
-              }}
-            >
+            <p className="cursor-pointer" onClick={toggleMenu}>
               x
             </p>
           </div>
@@ -51,7 +48,7 @@ export default function Header() {
       <div className="flex justify-center ">
         <div className="max-w-[1120px] w-full h-[100px] flex justify-between items-center px-8 overflow-hidden ">
           <div className="md:hidden mr-4">
-            <div onClick={() => MobileIsOpen()}>
+            <div onClick={toggleMenu}>
               <HamburguerPhone></HamburguerPhone>
             </div>
           </div>
