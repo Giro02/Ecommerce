@@ -10,9 +10,11 @@ const IndexPage = () => {
     <main>
       <Header></Header>
       <Carosel></Carosel>
-      <Benefits></Benefits>
-      <Foryou></Foryou>
-      <ForYouCarousel></ForYouCarousel>
+      <div className="container">
+        <Benefits></Benefits>
+        <Foryou></Foryou>
+        <ForYouCarousel></ForYouCarousel>
+      </div>
     </main>
   );
 };

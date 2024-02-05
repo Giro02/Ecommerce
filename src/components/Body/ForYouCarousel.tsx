@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import "../../styles/carousel.css";
-import ProdData from "../../products.json";
+import ProdData from "../../JSONs/products.json";
 import { IoIosArrowForward } from "react-icons/io";
 
 const App = () => {

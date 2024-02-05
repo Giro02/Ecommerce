@@ -5,50 +5,56 @@
         "url": "HappyHair.png",
         "desc": "Estimula o crescimento e fortalece os fios capilares",
         "price": "99,99",
-        "page": "HappyHair"
+        "page": "HappyHair",
+        "category" : "Queda Capilar"        
       },
       {
         "name": "Lift Detox Black 60 Cápsulas",
         "url": "LiftDetoxBlack.png",
         "desc": "Diminui o apetite e regula o intestino",
         "price": "137,00",
-        "page": "LiftDetoxBlack"
+        "page": "LiftDetoxBlack",
+        "category" : "Emagrecimento"   
       },
       {
         "name": "Inibe One 30 Cápsulas",
         "url": "InibeOne.png",
         "desc": "Acelera o metabolismo e impulsiona o emagrecimento",
         "price": "167,00",
-        "page": "InibeOne"
+        "page": "InibeOne",
+        "category" : "Emagrecimento"   
       },
       {
         "name": "Sibutran 2 60 Cápsulas",
         "url": "Sibutran2.png",
         "desc": "Reduz o apetite e elimina excesso de líquidos",
         "price": "99,99",
-        "page": "HappyHair"
+        "page": "HappyHair",
+        "category" : "Emagrecimento"   
       },
       {
         "name": "Happy Hair 30 Cápsulas",
         "url": "HappyHair.png",
         "desc": "Estimula o crescimento e fortalece os fios capilares",
         "price": "49,99",
-        "page": "HappyHair"
+        "page": "HappyHair",
+        "category" : "Queda Capilar"      
       },
       {
         "name": "Happy Hair 30 Cápsulas",
         "url": "HappyHair.png",
         "desc": "Estimula o crescimento e fortalece os fios capilares",
         "price": "49,99",
-        "page": "HappyHair"
+        "page": "HappyHair",
+        "category" : "Queda Capilar"      
       },
       {
         "name": "Happy Hair 30 Cápsulas",
         "url": "HappyHair.png",
         "desc": "Estimula o crescimento e fortalece os fios capilares",
         "price": "49,99",
-        "page": "HappyHair"
+        "page": "HappyHair",
+        "category" : "Queda Capilar"      
       }
-      
     ]
   }
